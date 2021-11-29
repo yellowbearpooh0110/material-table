@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true,
+  value: true
 });
 exports.reducePercentsInCalc = exports.selectionMaxWidth = exports.actionsColumnWidth = exports.rowActions = exports.baseIconSize = exports.elementSize = void 0;
 
@@ -38,17 +38,13 @@ var selectionMaxWidth = function selectionMaxWidth(props, maxTreeLevel) {
 exports.selectionMaxWidth = selectionMaxWidth;
 
 var reducePercentsInCalc = function reducePercentsInCalc() {
-  var calc =
-    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+  var calc = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var fullValue = arguments.length > 1 ? arguments[1] : undefined;
   var captureGroups = calc.match(/(\d*)%/);
 
   if (captureGroups && captureGroups.length > 1) {
     var percentage = captureGroups[1];
-    return calc.replace(
-      /\d*%/,
-      "".concat(fullValue * (percentage / 100), "px")
-    );
+    return calc.replace(/\d*%/, "".concat(fullValue * (percentage / 100), "px"));
   }
 
   return calc.replace(/\d*%/, "".concat(fullValue, "px"));

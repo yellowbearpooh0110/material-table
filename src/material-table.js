@@ -163,6 +163,7 @@ export default class MaterialTable extends React.Component {
   }
 
   getProps(props) {
+    console.log(props);
     const calculatedProps = { ...(props || this.props) };
     calculatedProps.components = {
       ...MaterialTable.defaultProps.components,
@@ -310,6 +311,7 @@ export default class MaterialTable extends React.Component {
         });
       }
     }
+    console.log('2: ', calculatedProps)
 
     return calculatedProps;
   }
