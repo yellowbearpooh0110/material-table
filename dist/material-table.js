@@ -1113,7 +1113,6 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
       value: function getProps(props) {
         var _this3 = this;
 
-        console.log(props);
         var calculatedProps = (0, _objectSpread2.default)(
           {},
           props || this.props
@@ -1153,12 +1152,13 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
                 (action.position === undefined &&
                   action.isFreeAction === undefined)
               ) {
-                if (typeof action === "function")
+                if (typeof action === "function") {
+                  var processedAction = action();
                   return {
                     action: action,
-                    position: action.position || "toolbarOnSelect",
+                    position: processedAction.position || "toolbarOnSelect",
                   };
-                else
+                } else
                   return (0, _objectSpread2.default)({}, action, {
                     position: "toolbarOnSelect",
                   });
@@ -1328,7 +1328,6 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
           }
         }
 
-        console.log("2: ", calculatedProps);
         return calculatedProps;
       },
     },
